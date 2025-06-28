@@ -13,7 +13,7 @@ input("Começando...\nPressione enter")
 
 while answer.lower().startswith('s'):
     while True:
-        os.system("cls")
+        os.system('cls' if os.name == 'nt' else 'clear')
         secret_word = input("Digite uma palavra para outra pessoa adivinhar: ").lower()
 
         #verificações se foi digitada uma palavra válida
@@ -31,9 +31,9 @@ while answer.lower().startswith('s'):
     trys = 0
     for a in secret_word: # gera a palavra secreta com ****
         current_word.append('*')
-    os.system("cls")
+    os.system('cls' if os.name == 'nt' else 'clear')
     while True:
-        os.system("cls")
+        os.system('cls' if os.name == 'nt' else 'clear')
         if "*" not in current_word:
             print("PARABÉNS! Você acertou a palavra secreta!")
             print("Tentativas:", trys)
@@ -67,7 +67,7 @@ while answer.lower().startswith('s'):
                 current_word[index] = guessed_letter
         trys += 1
     answer = input("Deseja jogar novamente?[Sim/Não]")
-os.system("cls")
+os.system('cls' if os.name == 'nt' else 'clear')
 print("=============================================")
 print("Obrigada por jogar o jogo da palavra secreta!")
 print("=============================================")
